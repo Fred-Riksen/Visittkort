@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="grafikk.css">
+    <title>Visittkort for skole</title>
+</head>
+<body>
+    <div>
+        <h1>Visittkort</h1>
+      
+        <label for="Navn">Navn</label>
+        <input type="text" id="Navn">
+      
+        <label for="Nummer">Nummer</label>
+        <input type="number" id="Nummer">
+
+        <label for="OmEleven">Om elev</label>
+        <input type="text" id="OmEleven">
+
+        <select id="Trinn">
+            <option value="Vg1">Vg1</option>
+            <option value="Vg2">Vg2</option>
+            <option value="Vg3">Vg3</option>
+        </select>
+      
+        <button id="GenererKlassekort">Generer klassekort</button>
+      
+        <p id="Resultat"></p>
+    </div>
+    <script>
+        let navnEl = document.querySelector("#Navn");
+        let nummerEl = document.querySelector("#Nummer");
+        let omEl = document.querySelector("#OmEleven");
+        let trinnEl= document.querySelector("#Trinn");
+        let knappEl = document.querySelector("#GenererKlassekort");
+        let resultatEl = document.querySelector("#Resultat");
+
+        knappEl.addEventListener("click", resultat);
+
+        function resultat() {
+            let navn = navnEl.value;
+            let nummer = Number(nummerEl.value);
+            let om = omEl.value;
+            let trinn = trinnEl.value;
+          
+            resultatEl.innerHTML = "Navn: " + navn + " " + "Nummer: " + nummer + " " + "Om elev: " + om + " " + "Trinn: " + trinn;
+        }
+    </script>
+
+</body>
+</html>
