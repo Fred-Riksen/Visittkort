@@ -1,0 +1,49 @@
+body{
+    background-color: lightblue;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+}
+#Resultat {
+    border: 2px solid black;
+    padding: 10px;
+  }
+
+  .kort {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    margin: 10px auto;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+  }
+  
+  .kort h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .kort img {
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid black;
+    float: right;
+  }
+  
+  .kort p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+
+  
