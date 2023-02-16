@@ -10,7 +10,7 @@
 <body>
     <div>
         <h1>Visittkort</h1>
-      
+      <div id="container">
         <label for="Navn">Navn</label>
         <input type="text" id="Navn">
       
@@ -25,29 +25,47 @@
             <option value="Vg2">Vg2</option>
             <option value="Vg3">Vg3</option>
         </select>
+
+        <form>
+            <label for="bilde">Velg bilde:</label>
+            <input type="file" id="bilde" name="bilde">
+          </form>
       
         <button id="GenererKlassekort">Generer klassekort</button>
       
         <p id="Resultat"></p>
     </div>
+</div>
     <script>
         let navnEl = document.querySelector("#Navn");
         let nummerEl = document.querySelector("#Nummer");
         let omEl = document.querySelector("#OmEleven");
-        let trinnEl= document.querySelector("#Trinn");
+        let trinnEl = document.querySelector("#Trinn");
         let knappEl = document.querySelector("#GenererKlassekort");
         let resultatEl = document.querySelector("#Resultat");
-
+        let bildeEl = document.querySelector("#bilde");
+        
         knappEl.addEventListener("click", resultat);
-
+        
         function resultat() {
-            let navn = navnEl.value;
-            let nummer = Number(nummerEl.value);
-            let om = omEl.value;
-            let trinn = trinnEl.value;
-          
-            resultatEl.innerHTML = "Navn: " + navn + " " + "Nummer: " + nummer + " " + "Om elev: " + om + " " + "Trinn: " + trinn;
+          let navn = navnEl.value;
+          let nummer = Number(nummerEl.value);
+          let om = omEl.value;
+          let trinn = trinnEl.value;
+          let bilde = bildeEl.files[0];
+        
+          let reader = new FileReader();
+          reader.readAsDataURL(bilde);
+          reader.onload = function() {
+            let bildeData = reader.result;
+            let kort = document.createElement("div");
+            kort.classList.add("kort");
+            kort.innerHTML = "<img src='" + bildeData + "'><h2>" + navn + "</h2><p>Nummer: " + nummer + "</p><p>Om elev: " + om + "</p><p>Trinn: " + trinn + "</p>";
+            resultatEl.appendChild(kort);
+          }
         }
+        
+
     </script>
 
 </body>
