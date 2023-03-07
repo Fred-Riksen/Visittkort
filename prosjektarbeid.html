@@ -10,6 +10,7 @@
 <body>
     <div>
         <h1>Visittkort</h1>
+<!-- input for informasjon brukeren skriver inn -->
       <div id="container">
         <label for="Navn">Navn</label>
         <input type="text" id="Navn">
@@ -25,12 +26,12 @@
             <option value="Vg2">Vg2</option>
             <option value="Vg3">Vg3</option>
         </select>
-
+<!-- lar brukeren velge bilde å bruke på elevkortet sitt-->
         <form>
             <label for="bilde">Velg bilde:</label>
             <input type="file" id="bilde" name="bilde">
           </form>
-      
+<!-- knappen som lager og viser klassekortet etter brukeren har trykket på den-->
         <button id="GenererKlassekort">Generer klassekort</button>
       
         <p id="Resultat"></p>
@@ -46,7 +47,8 @@
         let bildeEl = document.querySelector("#bilde");
         
         knappEl.addEventListener("click", resultat);
-        
+
+// funksjon for "Generer Klassekort" knappen som lager klassekortet etter brukeren har fyllt in skjema og tekstfeltene //
         function resultat() {
           let navn = navnEl.value;
           let nummer = Number(nummerEl.value);
@@ -60,12 +62,11 @@
             let bildeData = reader.result;
             let kort = document.createElement("div");
             kort.classList.add("kort");
+// etter alle feltene er fylt og bilde er lastet opp så kan man trykke på generer, hvis man har glemt og fylle inn så lar ikke programmet brukeren generere klassekortet.
             kort.innerHTML = "<img src='" + bildeData + "'><h2>" + navn + "</h2><p>Nummer: " + nummer + "</p><p>Om elev: " + om + "</p><p>Trinn: " + trinn + "</p>";
             resultatEl.appendChild(kort);
           }
         }
-        
-
     </script>
 
 </body>
