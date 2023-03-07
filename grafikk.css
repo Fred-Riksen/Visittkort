@@ -1,49 +1,39 @@
-body{
-    background-color: lightblue;
+body
+{
+    background-color: lightgrey;
 }
 
-#container{
+#container
+{
     display: flex;
     flex-direction: column;
 }
-#Resultat {
-    border: 2px solid black;
-    padding: 10px;
-  }
-
-  .kort {
+/* utseendet på kortet */
+  .kort 
+  {
     background-color: white;
     border: 1px solid black;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
     margin: 10px auto;
     padding: 20px;
     width: 400px;
     height: 200px;
   }
   
-  .kort h1 {
-    font-size: 24px;
-    font-weight: bold;
+  .kort h1 
+  {
     text-align: center;
     margin-bottom: 20px;
   }
-  
-  .kort img {
-    display: block;
-    margin: 0 auto;
+/* bildet som blir lastet opp av bruker blir redigert slik at det passer på kortet */
+  .kort img 
+  {
     width: 200px;
     height: 200px;
     object-fit: cover;
-    object-position: center;
     border: 2px solid black;
     float: right;
   }
-  
-  .kort p {
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 10px 0;
-  }
+
 
   
